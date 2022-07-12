@@ -1,0 +1,15 @@
+<div class="template-list-back">
+  <div style="margin-top: 24px;" *ngFor="let toolBox of toolBoxList;">
+    <div class="template-item-wrap">
+      <div class="button-wrap">
+        <button nz-button nzType="primary" nzSize="small"><i nz-icon nzType="drag"></i></button>
+        <button nz-button nzType="primary" nzSize="small"><i nz-icon nzType="edit" nzTheme="outline"></i></button>
+        <button nz-button nzType="primary" nzSize="small" nzDanger><i nz-icon nzType="delete"></i></button>
+      </div>
+      <template-item-back>
+        <sf [schema]="toolBox.sfTemplate.schema" [ui]="toolBox.sfTemplate.ui" [formData]="toolBox.sfTemplate.formData"
+          button="none"></sf>
+      </template-item-back>
+    </div>
+  </div>
+</div>

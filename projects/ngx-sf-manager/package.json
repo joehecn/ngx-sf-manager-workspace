@@ -1,0 +1,17 @@
+{
+  "name": "ngx-sf-manager",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^12.2.0",
+    "@angular/core": "^12.2.0",
+    "fast-deep-equal": "^3.1.3",
+    "@delon/util": "^12.4.2",
+    "@delon/form": "^12.4.2",
+    "@delon/theme": "^12.4.2",
+    "@delon/abc/ellipsis": "^12.4.2",
+    "ng-zorro-antd": "^12.0.1"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

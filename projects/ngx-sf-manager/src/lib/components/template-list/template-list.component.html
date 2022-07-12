@@ -1,0 +1,23 @@
+<div class="template-list">
+  <div class="template-item-wrap" *ngFor="let template of templateList; let i = index"
+    [ngClass]="isSelectClass(template)" allowdrop draggable="true" (dragenter)="onDragenter($event)"
+    (dragleave)="onDragLeave($event)" (dragover)="onDragOver($event)" (drop)="onDrop($event, template)">
+    <div class="button-wrap">
+      <button class="btn-drag" nz-button nzType="primary" nzSize="small" draggable="true"
+        (dragstart)="onDragStart($event, i)" (dragend)="onDragEnd($event)"><i nz-icon nzType="drag"></i></button>
+      <button nz-button nzType="primary" nzSize="small" (click)="handleItemEdit(i)"><i nz-icon nzType="edit"
+          nzTheme="outline"></i></button>
+      <button nz-button nzType="primary" nzSize="small" nzDanger (click)="handleItemRemove(i)"><i nz-icon
+          nzType="delete"></i></button>
+    </div>
+    <template-item [ngClass]="isSelectClass(template, true)">
+      <sf #sf [schema]="template.sfTemplate.schema" [ui]="template.sfTemplate.ui"
+        [formData]="template.sfTemplate.formData" button="none" (formChange)="handleFormChange($event)"></sf>
+    </template-item>
+  </div>
+
+  <div *ngIf="showEmptyItem" class="template-item-wrap empty-item-wrap" allowdrop (dragenter)="onDragenter($event)"
+    (dragleave)="onDragLeave($event)" (dragover)="onDragOver($event)" (drop)="onDrop($event, null)">
+    <div class="empty-info">追加控件</div>
+  </div>
+</div>

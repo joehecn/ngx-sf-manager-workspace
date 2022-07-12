@@ -29,10 +29,10 @@
           </div>
         </nz-tab>
         <nz-tab nzTitle="Property Schema" (nzSelect)="setPreModel()">
-          <pre style="padding: 0 16px;">{{ preModel }}</pre>
+          <pre style="padding: 0 16px; max-height: calc(100vh - 160px); overflow: auto;">{{ preModel }}</pre>
         </nz-tab>
         <nz-tab nzTitle="Template Schema">
-          <pre style="padding: 0 16px;">{{ preCode }}</pre>
+          <pre style="padding: 0 16px; max-height: calc(100vh - 160px); overflow: auto;">{{ preCode }}</pre>
         </nz-tab>
       </nz-tabset>
     </nz-affix>

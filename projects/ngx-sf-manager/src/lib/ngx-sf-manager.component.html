@@ -28,10 +28,10 @@
             <nz-empty *ngIf="!selectTemplate"></nz-empty>
           </div>
         </nz-tab>
-        <nz-tab nzTitle="Property Schema" (nzSelect)="setPreModel()">
+        <nz-tab *ngIf="showSchemaTabs" nzTitle="Property Schema" (nzSelect)="setPreModel()">
           <pre style="padding: 0 16px; max-height: calc(100vh - 160px); overflow: auto;">{{ preModel }}</pre>
         </nz-tab>
-        <nz-tab nzTitle="Template Schema">
+        <nz-tab *ngIf="showSchemaTabs" nzTitle="Template Schema">
           <pre style="padding: 0 16px; max-height: calc(100vh - 160px); overflow: auto;">{{ preCode }}</pre>
         </nz-tab>
       </nz-tabset>

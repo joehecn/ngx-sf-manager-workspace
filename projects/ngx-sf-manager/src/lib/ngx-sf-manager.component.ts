@@ -23,6 +23,9 @@ export class NgxSfManagerComponent implements OnInit {
   @Input()
   showPreviewBtn: boolean = true;
 
+  @Input()
+  showSchemaTabs: boolean = false;
+
   @ViewChild('sf') sf!: SFComponent;
 
   selectedTabIndex = 0;

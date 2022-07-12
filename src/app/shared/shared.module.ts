@@ -10,8 +10,8 @@ import { SHARED_DELON_MODULES } from './shared-delon.module';
 import { SHARED_ZORRO_MODULES } from './shared-zorro.module';
 
 // #region third libs
-// import { NgxSfManagerModule } from 'projects/ngx-sf-manager/src/public-api';
-import { NgxSfManagerModule } from 'ngx-sf-manager';
+import { NgxSfManagerModule } from 'projects/ngx-sf-manager/src/public-api';
+// import { NgxSfManagerModule } from 'ngx-sf-manager';
 
 const THIRDMODULES: Array<Type<void>> = [
   NgxSfManagerModule

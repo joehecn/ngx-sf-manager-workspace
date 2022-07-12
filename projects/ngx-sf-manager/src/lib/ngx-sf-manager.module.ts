@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { NgxSfManagerComponent } from './ngx-sf-manager.component';
 
+import { NzAffixModule } from 'ng-zorro-antd/affix';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
@@ -33,6 +34,7 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
   imports: [
     BrowserModule,
+    NzAffixModule,
     NzGridModule,
     NzButtonModule,
     NzEmptyModule,
@@ -42,6 +44,7 @@ import { BrowserModule } from '@angular/platform-browser';
     EllipsisModule,
   ],
   exports: [
+    NzAffixModule,
     NzGridModule,
     NzButtonModule,
     NzEmptyModule,

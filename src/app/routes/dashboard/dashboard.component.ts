@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 // import { NgxSfManagerService } from 'projects/ngx-sf-manager/src/public-api';
-import { NgxSfManagerService } from 'ngx-sf-manager';
+// import { NgxSfManagerService } from 'ngx-sf-manager';
 // import { ModalHelper } from '@delon/theme';
 // import { DemoModalComponent } from 'projects/ngx-sf-manager/src/lib/components/demo-modal/demo-modal.component';
 
@@ -16,14 +16,14 @@ export class DashboardComponent {
 
   constructor(
     // private mh: ModalHelper
-    private managerService: NgxSfManagerService
+    // private managerService: NgxSfManagerService
   ) { }
   
-  openModal() {
-    // this.mh.create(DemoModalComponent).subscribe(console.log);
-    const demo = this.managerService.getForm();
-    console.log(demo);
-  }
+  // openModal() {
+  //   // this.mh.create(DemoModalComponent).subscribe(console.log);
+  //   const demo = this.managerService.getForm();
+  //   console.log(demo);
+  // }
   // options: JOption[] = []
 
   // templates: JOption[] = [

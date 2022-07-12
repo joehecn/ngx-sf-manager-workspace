@@ -6,6 +6,10 @@ npm config get registry
 npm config set registry https://registry.npmmirror.com/
 
 npm config delete registry
+
+npm publish
+
+ng build ngx-sf-manager
 ```
 
 <p align="center">

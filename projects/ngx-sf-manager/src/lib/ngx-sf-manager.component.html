@@ -3,35 +3,38 @@
     <button *ngIf="showPreviewBtn" nz-button nzType="primary" nzGhost (click)="openModal()">预览</button>
   </div>
   <nz-col nzXs="24" nzSm="24" nzMd="4" nzLg="4">
-    <control-list></control-list>
+    <nz-affix nzOffsetTop="64">
+      <control-list></control-list>
+    </nz-affix>
   </nz-col>
   <nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="12">
     <div class="template-lists-wrap">
       <div class="back-template-list-wrap">
         <template-list-back></template-list-back>
       </div>
-
       <div class="template-list-wrap">
         <template-list></template-list>
       </div>
     </div>
   </nz-col>
   <nz-col nzXs="24" nzSm="24" nzMd="8" nzLg="8">
-    <nz-tabset [(nzSelectedIndex)]="selectedTabIndex" nzType="card" class="property-tabset">
-      <nz-tab nzTitle="属性">
-        <div style="padding-right: 16px;">
-          <sf #sf *ngIf="selectTemplate" [schema]="selectTemplate.sfModel.schema" [ui]="selectTemplate.sfModel.ui"
-            [formData]="selectTemplate.sfModel.formData" button="none" (formChange)="handleFormChange($event)">
-          </sf>
-          <nz-empty *ngIf="!selectTemplate"></nz-empty>
-        </div>
-      </nz-tab>
-      <nz-tab nzTitle="Property Schema" (nzSelect)="setPreModel()">
-        <pre style="padding: 0 16px;">{{ preModel }}</pre>
-      </nz-tab>
-      <nz-tab nzTitle="Template Schema">
-        <pre style="padding: 0 16px;">{{ preCode }}</pre>
-      </nz-tab>
-    </nz-tabset>
+    <nz-affix nzOffsetTop="64">
+      <nz-tabset [(nzSelectedIndex)]="selectedTabIndex" nzType="card" class="property-tabset">
+        <nz-tab nzTitle="属性">
+          <div style="padding: 0 16px; max-height: calc(100vh - 160px); overflow: auto;">
+            <sf #sf *ngIf="selectTemplate" [schema]="selectTemplate.sfModel.schema" [ui]="selectTemplate.sfModel.ui"
+              [formData]="selectTemplate.sfModel.formData" button="none" (formChange)="handleFormChange($event)">
+            </sf>
+            <nz-empty *ngIf="!selectTemplate"></nz-empty>
+          </div>
+        </nz-tab>
+        <nz-tab nzTitle="Property Schema" (nzSelect)="setPreModel()">
+          <pre style="padding: 0 16px;">{{ preModel }}</pre>
+        </nz-tab>
+        <nz-tab nzTitle="Template Schema">
+          <pre style="padding: 0 16px;">{{ preCode }}</pre>
+        </nz-tab>
+      </nz-tabset>
+    </nz-affix>
   </nz-col>
 </nz-row>

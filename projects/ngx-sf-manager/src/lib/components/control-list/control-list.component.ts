@@ -33,7 +33,12 @@ export class ControlListComponent implements OnInit {
     const element = elements[index].children[0] as HTMLElement;
 
     const width = element.clientWidth;
-    e.dataTransfer!.setDragImage(element, (width - 96) * 2, 20 * 2);
+
+    if (this.managerService.isRetinaDisplay()) {
+      e.dataTransfer!.setDragImage(element, (width - 96) * 2, 20 * 2);
+    } else {
+      e.dataTransfer!.setDragImage(element, (width - 96), 20);
+    }
 
     return true;
   }

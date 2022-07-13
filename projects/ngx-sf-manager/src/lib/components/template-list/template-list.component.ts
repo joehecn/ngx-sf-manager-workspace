@@ -194,7 +194,11 @@ export class TemplateListComponent implements OnInit {
     const x = e.offsetX;
     const y = e.offsetY;
 
-    e.dataTransfer!.setDragImage(grandParent, (width - 104 + x) * 2, (y + 12) * 2);
+    if (this.managerService.isRetinaDisplay()) {
+      e.dataTransfer!.setDragImage(grandParent, (width - 104 + x) * 2, (y + 12) * 2);
+    } else {
+      e.dataTransfer!.setDragImage(grandParent, (width - 104 + x), y + 12);
+    }
 
     return true;
   }

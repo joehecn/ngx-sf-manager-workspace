@@ -194,7 +194,7 @@ export class TemplateListComponent implements OnInit {
     const x = e.offsetX;
     const y = e.offsetY;
 
-    e.dataTransfer!.setDragImage(grandParent, width + x - 104, y + 12);
+    e.dataTransfer!.setDragImage(grandParent, (width - 104 + x) * 2, (y + 12) * 2);
 
     return true;
   }

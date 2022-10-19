@@ -83,4 +83,9 @@ export class NgxSfManagerService {
 
     return false;
   }
+
+  // 获取表单模板list
+  public getTemplateList() {
+    return this.templateList;
+  }
 }

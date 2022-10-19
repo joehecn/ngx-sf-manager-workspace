@@ -19,7 +19,7 @@ import { TemplateItemBackComponent } from './components/template-item-back/templ
 import { TemplateListComponent } from './components/template-list/template-list.component';
 import { TemplateItemComponent } from './components/template-item/template-item.component';
 
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ import { BrowserModule } from '@angular/platform-browser';
     TemplateItemComponent,
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     NzAffixModule,
     NzGridModule,
     NzButtonModule,

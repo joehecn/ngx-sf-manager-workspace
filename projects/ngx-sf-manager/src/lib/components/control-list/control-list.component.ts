@@ -48,7 +48,9 @@ export class ControlListComponent implements OnInit {
     
     target.style.opacity = '1';
 
-    this.managerService.setShowEmptyItem(false);
+    if (this.managerService.templateList.length > 0) {
+      this.managerService.setShowEmptyItem(false);
+    }
 
     return false;
   }

@@ -116,6 +116,11 @@ export class TemplateListComponent implements OnInit {
     });
   }
 
+    // 检查service中的template是否发生了变化
+    ngDoCheck(){
+      this.templateList = this.managerService.templateList;
+    }
+
   // template-item-wrap
   onDragOver(e: DragEvent) {
     e.preventDefault && e.preventDefault();

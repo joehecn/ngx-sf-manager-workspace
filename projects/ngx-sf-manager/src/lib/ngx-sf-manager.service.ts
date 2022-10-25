@@ -88,4 +88,9 @@ export class NgxSfManagerService {
   public getTemplateList() {
     return this.templateList;
   }
+
+  // 模板初始化
+  public initTemplates() {
+    this.templateList = [];
+  }
 }

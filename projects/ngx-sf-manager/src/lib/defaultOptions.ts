@@ -408,9 +408,8 @@ export const defaultOptions: JOption[] = [
           number: {
             title: 'Number',
             type: 'number',
-            minimum: 18,
+            minimum: 0,
             exclusiveMinimum: false,
-            maximum: 100,
             exclusiveMaximum: false,
             multipleOf: 1,
             // 是否只读状态，等同 nzDisabled

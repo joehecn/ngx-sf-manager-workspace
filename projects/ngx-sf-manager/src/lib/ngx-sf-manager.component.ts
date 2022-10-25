@@ -18,15 +18,21 @@ export class NgxSfManagerComponent implements OnInit {
   options: JOption[] = [];
 
   @Input()
-  templates: JOption[] = [];
-
-  @Input()
   showPreviewBtn: boolean = true;
 
   @Input()
   showSchemaTabs: boolean = false;
 
+  @Input() 
+  set setTemplate(templates: JOption[]) {
+    this.templates = templates;
+
+    this.initTemplate();
+  }
+
   @ViewChild('sf') sf!: SFComponent;
+
+  templates: JOption[] = []
 
   selectedTabIndex = 0;
 
@@ -74,6 +80,11 @@ export class NgxSfManagerComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+  }
+
+  // 初始化模板
+  initTemplate() {
     /** 工具箱 */
     if (this.managerService.toolBoxList.length === 0) {
       // 注册默认工具箱
@@ -88,13 +99,15 @@ export class NgxSfManagerComponent implements OnInit {
       // console.log('---- ngx-sf-manager 注册工具箱完成 ----');
     }
 
-    // 模板
-    if (this.managerService.templateList.length === 0) {
+    // 注册模板
+    // if (this.managerService.templateList.length === 0) {
+      // 模板初始化
+      this.managerService.initTemplates();
       this.templates.forEach(template => {
         this.managerService.templateRegister(template)
       })
       // console.log('---- ngx-sf-manager 导入模板完成 ----');
-    }
+    // }
 
     this.selectedTabIndex = 0;
     this.selectTemplate = null;
@@ -134,5 +147,5 @@ export class NgxSfManagerComponent implements OnInit {
           break;
       }
     });
-  }
+}
 }
